@@ -1,0 +1,17 @@
+Original RISO RIOT editorial art
+Generated using the built-in image_gen tool, 2026-10-03 UTC.
+No specific model identifier was selected or asserted.
+Original output: generated_images/exec-97fca7ca-39d6-49ca-b217-c792c8a61577.png
+Project original: public/art/riso-sheet-original.png
+Optimized web image: public/art/riso-sheet.webp
+Optimization: RGB WebP conversion with Pillow, resized proportionally from 1536×1024 to 800×533 using Lanczos, quality 65, method 6; composition unchanged.
+
+Prompt:
+Use case: stylized-concept.
+Asset type: original editorial risograph print artwork for an experimental independent print-club website.
+Primary request: A bold landscape 3:2 sheet of physical risograph artwork on rough acid-yellow paper. Four distinct large abstract compositions arranged loosely across the sheet, without frames or panel borders, each clear enough to crop into its own poster card. Weird hand-cut flower, jagged star, hypnotic eye and off-kilter sun forms, irregular cut-paper silhouettes.
+Style/medium: genuinely tactile 2-color risograph overprint and analog xerox collage, underground editorial poster art, delightfully imperfect and anti-design.
+Composition/framing: flat overhead artwork, edge-to-edge yellow sheet filling the image, large striking motifs with breathing room between them, spontaneous asymmetric rhythm.
+Color palette: acid yellow paper with saturated hot magenta and intense cobalt blue inks, overlapping ink producing dark violet in places.
+Materials/textures: paper fibers, dense halftone dots, visibly misregistered ink edges, ragged scissor cuts, screenprinted grain, xerox speckling, uneven ink coverage.
+Constraints: Original abstract art only. No text, no letters, no numbers, no words, no watermarks, no logo, no framed UI, no objects around the sheet, no mockup, no glossy digital gradient, no 3D rendering.

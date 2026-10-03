@@ -1,0 +1,5 @@
+{
+  "name": "riso-riot", "version": "1.0.0", "private": true, "type": "module",
+  "description": "ШУМ — независимый цифровой постер-клуб: выставка, лаборатория и журнал",
+  "scripts": {"build": "node scripts/build.mjs", "test": "node --test scripts/*.test.mjs", "serve": "python3 -m http.server 4174 --directory docs"}
+}
