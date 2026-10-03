@@ -1,6 +1,6 @@
-import {glyph} from './glyphs.mjs';
-import {posters} from './posters.mjs';
-import {defaults,normalize,posterSVG,filterPosters,escapeXML} from './engine.mjs';
+import {glyph} from './glyphs.mjs?v=6f50ca649e0a';
+import {posters} from './posters.mjs?v=6f50ca649e0a';
+import {defaults,normalize,posterSVG,filterPosters,escapeXML} from './engine.mjs?v=6f50ca649e0a';
 const $=(s,p=document)=>p.querySelector(s),$$=(s,p=document)=>[...p.querySelectorAll(s)];
 let toastTimer;function toast(t){const el=$('.toast');if(!el)return;el.textContent=t;el.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('visible'),3200);}
 const storage={get(k,fallback){try{return JSON.parse(localStorage.getItem(k))??fallback}catch{return fallback}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}}};

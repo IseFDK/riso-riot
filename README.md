@@ -27,7 +27,7 @@ npm test
 npm run serve
 ```
 
-The deterministic Node build emits GitHub Pages content to `docs`. GitHub Pages uses `main` / `docs`. All public routes are real HTML files and work as direct links.
+The deterministic Node build emits GitHub Pages content to `docs`. GitHub Pages uses `main` / `docs`. All public routes are real HTML files and work as direct links. CSS and the JavaScript module graph use deterministic content-hash query URLs to invalidate browser caches after updates.
 
 Saved posters and lab draft use localStorage on this browser only; no backend or analytics. Storage errors are handled without breaking the editor. PNG export uses a local SVG Blob and canvas; downloaded files stay on the visitor's device.
 
