@@ -14,3 +14,12 @@
 /* Interface text stays readable even where the print artwork is deliberately tiny. */
 .button,.stack-toggle,.site-header nav a,.filter-chips button,.saved-filter,.lab-secondary button,.control-group label:not(.palette-radio),.palette-radio,.search-row label{font-size:.875rem}
 @media(max-width:550px){.hero-caption{flex-wrap:wrap}.hero-caption .button{font-size:.875rem}.filter-chips button{white-space:normal}.card-meta{align-items:flex-start}.gallery-grid .card-meta>span{padding-top:6px}.search-row{align-items:stretch}.sort{flex-basis:45%}.saved-filter{flex:1}.lab-secondary button{font-size:.875rem}.detail-actions .button,.export-controls .button,dialog .button,.club-cta .button,.article-exercise .button{font-size:.875rem}}
+.glyph{display:inline-block;width:1em;height:1em;vertical-align:-.13em;flex:none;overflow:visible}
+.glyph-star{vertical-align:0}
+.paper-front{container-type:inline-size}
+.paper-title{font-size:3.5rem;font-size:22cqw}
+.stack-sticker{transform:translateZ(85px) rotate(-12deg)}
+.stack-toggle .glyph{width:1.15em;height:1.15em}
+.save-poster:not(.button) .glyph{width:.78em;height:.78em;vertical-align:middle}
+.button .glyph,.text-link .glyph{width:1.15em;height:1.15em}
+.round-arrow .glyph{width:1em;height:1em}
