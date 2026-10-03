@@ -47,3 +47,9 @@ main h1,main h2,main h3,main p,.site-footer p,.lab-secondary button{overflow-wra
 .poster-pagination strong,.poster-pagination span{min-width:0;overflow-wrap:anywhere}
 .club-about{align-items:start}
 .about-art{align-self:start;min-height:0;height:auto;aspect-ratio:3/4}
+/* Decorative marks keep their allotted column; ordinal labels keep clear of the copy. */
+.manifesto-symbol{font-size:70px}
+.manifesto-number{font-size:clamp(2rem,5vw,4.5rem)}
+@media(max-width:1150px){.manifesto-symbol{font-size:48px}}
+@media(max-width:800px){.manifesto-symbol{font-size:36px}}
+@media(max-width:550px){.manifesto-number{font-size:clamp(1.25rem,6vw,2rem)}}
