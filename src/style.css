@@ -28,3 +28,17 @@
 .save-poster:not(.button){min-width:44px!important;width:44px!important;height:44px!important;padding:0;display:inline-grid;place-items:center}
 .save-poster:not(.button) .glyph{width:22px;height:22px}
 @media(max-width:550px){.site-header nav{grid-template-columns:repeat(auto-fit,minmax(min(100%,7rem),1fr))}.palette-options,.two-controls{grid-template-columns:repeat(auto-fit,minmax(min(100%,7rem),1fr))}.site-header nav a{overflow-wrap:anywhere}.search-row{flex-wrap:wrap}.saved-filter{flex-basis:auto}}
+/* Allow genuinely enlarged text to reflow instead of forcing intrinsic grids wider. */
+.site-header{flex-wrap:wrap}
+.site-header nav{flex-wrap:wrap}
+.logo{font-size:clamp(2.7rem,4.5vw,3.3rem)}
+.footer-mark{font-size:clamp(3rem,8vw,7rem)}
+.site-header>*,.site-footer>*,.lab-workspace>*,.lab-controls>*,.lab-guide>*,.club-about>*,.riso-primer>*,.journal-card>*,.poster-detail>*,.control-title>*{min-width:0}
+main h1,main h2,main h3,main p,.site-footer p,.lab-secondary button{overflow-wrap:anywhere}
+.button{min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.palette-options,.two-controls{grid-template-columns:repeat(auto-fit,minmax(min(100%,7rem),1fr))}
+.lab-secondary button{white-space:normal}
+.home-lab h2 span{white-space:normal}
+.about-art{container-type:inline-size}
+.about-art span{font-size:18cqw}
+@media(max-width:550px){.logo-small{display:none}.filter-chips{grid-template-columns:repeat(auto-fit,minmax(min(100%,7rem),1fr))}.search-row{flex-direction:column;align-items:stretch}.sort{width:100%;flex:none}.saved-filter{width:100%;flex:none;text-align:left}.lab-controls{grid-template-columns:minmax(0,1fr)}.lab-guide{grid-template-columns:minmax(0,1fr)}.site-footer{grid-template-columns:minmax(0,1fr)}}
