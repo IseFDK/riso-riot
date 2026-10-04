@@ -7,3 +7,14 @@ test('sitemap has sixteen substantive pages and no QA or 404',()=>{const s=fs.re
 test('CSS provides mobile and reduced-motion support and code has no external requests',()=>{const css=fs.readFileSync('src/style.css','utf8'),app=fs.readFileSync('src/app.mjs','utf8');assert(css.includes('prefers-reduced-motion'));assert(css.includes('@media(max-width:550px)'));assert(css.includes(':focus-visible'));assert(!app.includes('fetch('));assert(!app.includes('eval('))});
 
 test('range controls have explicit labels and decorative symbols use SVG',()=>{const s=fs.readFileSync('docs/lab.html','utf8');for(const name of ['offset','angle','grain']){assert(s.includes(`for="lab-${name}"`));assert(s.includes(`id="lab-${name}" aria-label=`))}for(const file of html.filter(f=>!f.endsWith('qa.html'))){const s=fs.readFileSync(file,'utf8');assert(s.includes('class="glyph glyph-arrow"'));assert(!/[↗↔↶↺↓↑←→♡♥✳]/.test(s),file)}});
+
+// Prevent the CSS class collision that placed the PNG button over the live art.
+test('physical print sheets do not share classes with paper-colored controls',()=>{
+ const home=fs.readFileSync('docs/index.html','utf8'),lab=fs.readFileSync('docs/lab.html','utf8');
+ const sheets=[...home.matchAll(/class="([^"]*paper-(?:back|middle|front)[^"]*)"/g)].map(m=>m[1].split(/\s+/));
+ const controls=[lab.match(/id="download-png"[^>]*class="([^"]+)"/)[1].split(/\s+/),['palette-mini','paper']];
+ assert.equal(sheets.length,3);
+ for(const sheet of sheets)for(const control of controls)assert.deepEqual(sheet.filter(c=>control.includes(c)),[]);
+ const preview=lab.match(/id="poster-preview"[^>]*>([\s\S]*?)<\/div>/)[1];
+ assert(preview.startsWith('<svg xmlns='));assert(preview.includes('viewBox="0 0 1400 1960"'));
+});
