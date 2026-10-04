@@ -24,7 +24,7 @@ test('expanded lab exposes every palette shape and composition with named ink in
  const html=fs.readFileSync('docs/lab.html','utf8');
  for(const id of [...Object.keys(palettes),'custom'])assert(html.includes(`name="palette" value="${id}"`),id);
  for(const id of [...shapeIds,...layoutIds])assert(html.includes(`<option value="${id}">`),id);
- for(const [key,label]of [['bgColor','Фон'],['inkColor','Буквы'],['accentColor','Рисунок']]){
+ for(const [key,label]of [['bgColor','Фон'],['inkColor','Чернила'],['accentColor','Акцент']]){
   assert(html.includes(`type="color" id="lab-${key}"`));assert(html.includes(`for="lab-${key}"`));
   assert(html.includes(`data-picker-color="${key}" aria-label="${label}: выбрать цвет"`));
   assert(html.includes(`data-hex-color="${key}" aria-label="${label}: HEX"`));
