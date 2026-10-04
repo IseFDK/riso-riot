@@ -9,7 +9,7 @@ Public website: https://isefdk.github.io/riso-riot/
 - Home with a CSS-perspective physical poster stack (spread / collect toggle)
 - Gallery of 8 original SVG posters, category / search / sorting filters and browser-local favorites
 - Eight direct-link poster detail pages with editable SVG downloads and lab presets
-- DIY poster lab: two text lines, 4 palettes, 3 shapes, 3 layouts, layer offset, rotation, grain, randomize, undo and cancelable reset
+- DIY poster lab: two text lines, 8 ready palettes plus custom native/HEX inks, 7 shapes, 5 layouts, layer offset, rotation, grain, randomize, undo and cancelable reset
 - SVG + 1400×1960 PNG export entirely in the browser
 - Club manifesto, print introduction and four native FAQ disclosures
 - Journal and 3 substantive article pages
@@ -38,3 +38,7 @@ The original raster artwork was created for this project with OpenAI's built-in 
 SVG poster art is authored procedurally for this project in `src/engine.mjs`; SVG text uses a local Arial-family fallback for portable editable files. Browser preview/export typography can vary by operating system. The site self-hosts Manrope, by Mikhail Sharanda, under the SIL Open Font License 1.1 (included at `public/fonts/OFL.txt`). No third-party stock imagery or remote asset CDN is used.
 
 Code and procedural SVG artwork are MIT-licensed. The generated raster artwork may be used and modified as part of this project, subject to applicable OpenAI terms; this is not a claim of exclusive copyright. Font files retain their own OFL license.
+
+## Lab colors
+
+Choose one of eight prepared palettes, or edit background, letters, and shape inks with a native color picker or HEX field. Three-digit HEX and six-digit HEX are accepted, with or without #. Invalid typing keeps the last valid preview and reverts on leaving the field. Low text/background contrast is explained without blocking artistic choices. Custom mode starts from the currently visible palette; Undo restores earlier colors. Randomize preserves a custom palette while changing the composition. Old drafts are normalized with defaults; preset links reproduce the exhibition's actual three inks.

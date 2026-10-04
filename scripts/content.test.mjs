@@ -1,4 +1,4 @@
-import test from'node:test';import assert from'node:assert/strict';import fs from'node:fs';import path from'node:path';
+import test from'node:test';import assert from'node:assert/strict';import fs from'node:fs';import path from'node:path';import{palettes,shapeIds,layoutIds}from'../src/engine.mjs';
 function walk(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(dir,e.name)):[path.join(dir,e.name)])}const files=walk('docs'),html=files.filter(f=>f.endsWith('.html'));
 test('all public page local links and media exist',()=>{let checked=0;for(const file of html){const s=fs.readFileSync(file,'utf8');for(const match of s.matchAll(/(?:href|src)="([^"]+)"/g)){const url=match[1].split('#')[0].split('?')[0];if(!url||/^(https?:|data:|mailto:)/.test(url))continue;assert(fs.existsSync(path.resolve(path.dirname(file),url)),`${file} missing ${url}`);checked++}}assert(checked>200)});
 test('every public page has Russian lang unique title description and one h1',()=>{const titles=new Set();for(const file of html.filter(f=>!f.endsWith('qa.html'))){const s=fs.readFileSync(file,'utf8');assert(s.includes('<html lang="ru">'));assert(s.includes('name="description"'));assert.equal([...s.matchAll(/<h1[ >]/g)].length,1,file);const title=s.match(/<title>(.*?)<\/title>/)[1];assert(!titles.has(title),title);titles.add(title);assert(s.includes('href="#main"'));assert(s.includes('aria-label="Основная навигация"'));assert(s.includes('rel="icon"'))}assert.equal(titles.size,17)});
@@ -17,4 +17,17 @@ test('physical print sheets do not share classes with paper-colored controls',()
  for(const sheet of sheets)for(const control of controls)assert.deepEqual(sheet.filter(c=>control.includes(c)),[]);
  const preview=lab.match(/id="poster-preview"[^>]*>([\s\S]*?)<\/div>/)[1];
  assert(preview.startsWith('<svg xmlns='));assert(preview.includes('viewBox="0 0 1400 1960"'));
+});
+
+// UI choices must cover the renderer contract and keep native/HEX inputs accessible.
+test('expanded lab exposes every palette shape and composition with named ink inputs',()=>{
+ const html=fs.readFileSync('docs/lab.html','utf8');
+ for(const id of [...Object.keys(palettes),'custom'])assert(html.includes(`name="palette" value="${id}"`),id);
+ for(const id of [...shapeIds,...layoutIds])assert(html.includes(`<option value="${id}">`),id);
+ for(const [key,label]of [['bgColor','Фон'],['inkColor','Буквы'],['accentColor','Рисунок']]){
+  assert(html.includes(`type="color" id="lab-${key}"`));assert(html.includes(`for="lab-${key}"`));
+  assert(html.includes(`data-picker-color="${key}" aria-label="${label}: выбрать цвет"`));
+  assert(html.includes(`data-hex-color="${key}" aria-label="${label}: HEX"`));
+ }
+ assert(html.includes('id="color-validation"'));assert(html.includes('id="contrast-hint"'));
 });
