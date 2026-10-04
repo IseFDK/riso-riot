@@ -53,3 +53,6 @@ main h1,main h2,main h3,main p,.site-footer p,.lab-secondary button{overflow-wra
 @media(max-width:1150px){.manifesto-symbol{font-size:48px}}
 @media(max-width:800px){.manifesto-symbol{font-size:36px}}
 @media(max-width:550px){.manifesto-number{font-size:clamp(1.25rem,6vw,2rem)}}
+
+/* Acid-yellow actions need dark ink even inside the blue lab introduction. */
+.home-lab .button.yellow{color:var(--black)}
